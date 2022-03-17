@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    position: relative;
+    background-color: #8e9eab;
+}
+*:focus{
+    outline: none;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #8e9eab;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+    margin-bottom: 80px;
+}
+
+    
+#options {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    
+}
+.active, a:hover{
+    background-color: #136a8a;
+}
+
+a{
+
+    text-decoration: none;
+    border-bottom: none;
+    color: black;
+    
+}
+#input {
+    margin-top:15px;
+    width: 35%;
+    height: 50px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+   
+}
+#button{
+    margin-top:15px;
+    width: 40px;
+    height: 55px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    
+}
+
+
+#container{
+    position: static;
+    margin-top: 120px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    gap: 20px;
+    overflow-x: hidden;
+    justify-content: space-between;
+    
+}
+#container > div{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+#info{
+    text-align: center;
+    height: 120px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#info::-webkit-scrollbar {
+    display: none;
+}
+#name{
+    color: #136a8a
+}    

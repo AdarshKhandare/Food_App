@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/d103d8b709.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles\navbar.css">
+</head>
+<body>
+    <div id="Navbar">
+
+    </div>
+    <div id="container">
+
+    </div>
+
+
+
+    
+    
+</body>
+</html>
+<script type="module">
+
+    import navbar from "../components/navbar.js";
+
+    console.log(navbar)
+
+    let header = document.getElementById("Navbar")
+
+    header.innerHTML = navbar()
+
+
+    import { getData, append } from "./scripts/data.js"
+    // console.log(getData)
+
+    let response = await getData(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+    // console.log(response)
+
+    append(response, container)
+
+
+
+// document.getElementById("button").addEventListener("click", searchFood())
+//     import { searchFood, appendSearchFood } from "./scripts/data.js"
+//     console.log(searchFood)
+//     let input = document.getElementById("input").value
+//     let res = await searchFood(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+//     console.log(res)
+
+//     appendSearchFood(res, container)
+
+
+
+</script>
