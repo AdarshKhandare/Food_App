@@ -9,14 +9,11 @@
     <div id="Navbar">
 
     </div>
+    <h1>Food Categories</h1>
     <div id="container">
+    
 
     </div>
-
-
-
-    
-    
 </body>
 </html>
 <script type="module">
@@ -38,17 +35,75 @@
 
     append(response, container)
 
+    
+    // import { searchFood, appendSearchFood } from "./scripts/data.js"
+    // console.log(searchFood)
+    // let input = document.getElementById("input").value
+    // let res = await searchFood(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+    // console.log(res)
+
+    // appendSearchFood(res, container)
 
 
-// document.getElementById("button").addEventListener("click", searchFood())
-//     import { searchFood, appendSearchFood } from "./scripts/data.js"
-//     console.log(searchFood)
-//     let input = document.getElementById("input").value
-//     let res = await searchFood(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-//     console.log(res)
-
-//     appendSearchFood(res, container)
+    
 
 
+
+
+</script>
+<script>
+    
+        const searchForFood = async () => {
+                event.preventDefault();
+
+                document.getElementById("searchResult").innerHTML = null;
+
+                try {
+                    let input = document.getElementById("input").value
+                    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+
+                    let data = await res.json()
+                    console.log(data)
+                    appendSearchFood(data)
+
+
+                }
+                catch (e) {
+                    console.log(e)
+                }
+
+            }
+            searchForFood()
+
+    const appendSearchFood = (data) => {
+        console.log(data)
+
+        document.querySelector("#searchResult").innerHTML = null;
+
+        data.meals.map(({ strMeal, strMealThumb }) => {
+
+        let divM = document.createElement("div");
+        divM.setAttribute("id", "divM")
+
+        let div1 = document.createElement("div");
+        let div2 = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = strMealThumb;
+        img.setAttribute("id","searcImg")
+
+        let name = document.createElement("h2");
+        name.innerText = strMeal
+        name.setAttribute("id", "name")
+
+        div1.append(img, name)
+        div2.append(name)
+
+        divM.append(div1,div2)
+
+        document.querySelector("#searchResult").append(divM)
+
+        });
+    }
 
 </script>

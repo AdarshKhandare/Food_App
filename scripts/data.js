@@ -68,19 +68,30 @@ const appendSearchFood = (data, parent) =>{
 
     parent.innerHTML = null;
 
-    data.forEach(({strMeal,strMealThumb})=>{
+    data.forEach(({strMeal,strMealThumb,strCategory,strArea,strTags,strYoutube})=>{
 
         let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = strMealThumb;
+        img.setAttribute("id","fimg")
 
         let name = document.createElement("h2");
         name.innerText = strMeal
         name.setAttribute("id","name")
 
+        let cat = document.createElement("h3");
+        cat.innerText = "Type:-"+""+strCategory
+        
+        let location = document.createElement("h4");
+        location.innerText = "Location:-"+""+strArea
+        
+        let tags = document.createElement("h3");
+        tags.innerText = "Tags:-"+""+strTags
 
-        let img = document.createElement("img");
-        img.src = strMealThumb;
-
-        div.append(img,name)
+        let youtubelink = document.createElement("p");
+        youtubelink.innerText = "Toutube-Link:-"+""+strYoutube
+        div.append(img,name,cat,location,tags,youtubelink)
 
         parent.append(div)
 

@@ -25,13 +25,14 @@
     header.innerHTML = navbar()
 
 
-    import { getData, append } from "./scripts/data.js"
-    console.log(getData)
 
-    let response = await getData(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-    console.log(response)
+    import { searchFood, appendSearchFood } from "./scripts/data.js"
+    console.log(searchFood)
+    let input = document.getElementById("input").value
+    let res = await searchFood(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+    console.log(res)
 
-    append(response, container)
+    appendSearchFood(res, container)
 
 
 
