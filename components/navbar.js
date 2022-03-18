@@ -2,7 +2,7 @@ const navbar = ()=>{
 
     return `<div id="navbar">
         <h1><a href="index.html">Food-Recipes</a></h1>
-        <input type="text" id="input" placeholder="Search Recipes Here..........">
+        <input type="text" id="input" placeholder="Search Recipes Here.........." oninput="debounce(main,2000)">
         <button id="button" onclick="searchForFood()"><i class="fa-brands fa-searchengin"></i></button>
 
         <div id="options">
